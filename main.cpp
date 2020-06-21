@@ -81,7 +81,7 @@ std::vector<uint8_t> decode_nulls(const std::vector<uint8_t>& encoded, const std
     }
 
     std::vector<uint8_t> DecodedBytes;
-    for(int i = 0; i < GrbitNull.size(); i++)
+    for(auto i = 0; i < GrbitNull.size(); i++)
     {
         DecodedBytes.push_back(GrbitNull[i] ? encoded[i] : (uint8_t) 0);
     }
@@ -132,7 +132,7 @@ std::vector<uint8_t> HexToBytes(const std::string& hex)
     // credit: https://stackoverflow.com/a/30606613
     std::vector<uint8_t> bytes;
 
-    for (unsigned int i = 0; i < hex.length(); i += 2)
+    for (auto i = 0; i < hex.length(); i += 2)
     {
         std::string byteString = hex.substr(i, 2);
         uint8_t byte = (uint8_t) strtol(byteString.c_str(), NULL, 16);
